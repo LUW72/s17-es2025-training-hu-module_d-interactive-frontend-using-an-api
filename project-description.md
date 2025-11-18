@@ -14,11 +14,9 @@ The competitors will be asked to create a frontend for a REST API. First, users 
 
 Competitors will be given a working solution of Module C at the start of Module D, which they must use. Competitors are not allowed to build on top of their own Module C solution.
 
-**Base URL of the provided backend:** `https://cXX-solution.ssa.skillsit.hu/api/v1` where `XX` is the competitor's station number.
+**Backend:** You can find a compact docker-compose file in the `/assets/backend-solution` folder. Run the solution according to the `/assets/backend-solution/README.md` file.
 
-**API Documentation:** OpenAPI documentation is available in the `assets` for this backend and serves as the reference for all API endpoints.
-
-**Database:** Competitors do not have direct access to the database that the provided backend uses. However, a database dump is available in the `assets/db` directory for competitors to examine the data structure and content. All user passwords are set to **`password123`**.
+**API Documentation:** OpenAPI documentation is available in the `assets` for this backend and serves as the reference for all API endpoints. You can visualize the `skillshare-academy-api.yaml` in Swagger using this online tool: [https://editor.swagger.io/](https://editor.swagger.io/)
 
 The users of the frontend will be able to discover available courses, enroll in learning paths, complete chapters to earn credits, and book mentorship sessions. The frontend must handle the complexity of the credit system, real-time booking confirmations, and data visualization while presenting an intuitive interface to users.
 
