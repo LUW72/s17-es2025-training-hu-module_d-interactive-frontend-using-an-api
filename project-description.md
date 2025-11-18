@@ -14,7 +14,7 @@ The competitors will be asked to create a frontend for a REST API. First, users 
 
 Competitors will be given a working solution of Module C at the start of Module D, which they must use. Competitors are not allowed to build on top of their own Module C solution.
 
-**Backend:** You can find a compact docker-compose file in the `/assets/backend-solution` folder. Run the solution according to the `/assets/backend-solution/README.md` file.
+**Backend:** You can find a compact docker-compose file in the `/assets/backend-solution` folder. Run the backend according to the `/assets/backend-solution/README.md` file.
 
 **API Documentation:** OpenAPI documentation is available in the `assets` for this backend and serves as the reference for all API endpoints. You can visualize the `skillshare-academy-api.yaml` in Swagger using this online tool: [https://editor.swagger.io/](https://editor.swagger.io/)
 
@@ -99,7 +99,7 @@ Form validation must include email format checking, password strength requiremen
 
 The dashboard serves as the main landing page after login, displaying user statistics and learning analytics.
 
-![Dashboard Wireframe](assets/wireframes/03-dashboard.png)
+![Dashboard Wireframe](/assets/wireframes/03-dashboard.png)
 
 The page must contain the following elements:
 
@@ -188,18 +188,3 @@ The booking confirmation system must handle mentor responses and provide immedia
 Module D will be assessed using the provided version of Google Chrome. The assessment will include functional tests, as well as user experience.
 
 **Important**: Any modifications to the provided Module C API solution, including any changes to the database will not be considered during assessment. Use only the provided API endpoints as-is.
-
-## Mark distribution
-
-The table below outlines how marks are broken down and how they align with the WorldSkills Occupation Standards (WSOS).
-Please read the Technical Description for a full explanation of the WorldSkills Occupation Standards.
-
-| WSOS SECTION | Description                            | Points |
-| ------------ | -------------------------------------- | ------ |
-| 1            | Work organisation and self-management  | 0      |
-| 2            | Communication and interpersonal skills | 0      |
-| 3            | Design Implementation                  | 5      |
-| 4            | Front-End Development                  | 17     |
-| 5            | Back-End Development                   | 0      |
-|              |                                        |        |
-| **Total**    |                                        | 22     |
