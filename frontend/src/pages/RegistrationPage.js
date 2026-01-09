@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./css/login.css";
 import "./css/registration.css";
+import { NavLink } from "react-router-dom";
 
 export default function RegistrationPage() {
 
@@ -47,7 +48,7 @@ export default function RegistrationPage() {
 
                     <label>Confirm your password</label>
                     <input
-                        type="cpassword"
+                        type="password"
                         value={cpassword}
                         placeholder="Confirm your password"
                         onChange={(e) => setCPassword(e.target.value)}
@@ -57,7 +58,7 @@ export default function RegistrationPage() {
 
                 </form>
                 <p className="bottom-text">
-                    Already have an account? <a href="#">Sign in here</a>
+                    Already have an account? <NavLink to="/login">Sign in here</NavLink>
                 </p>
 
             </div>

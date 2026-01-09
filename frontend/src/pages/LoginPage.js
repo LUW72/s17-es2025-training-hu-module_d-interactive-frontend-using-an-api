@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./css/login.css";
+import { NavLink } from "react-router-dom";
 
 export default function LoginPage() {
 
@@ -37,7 +38,7 @@ export default function LoginPage() {
 
                 </form>
                 <p className="bottom-text">
-                    Registration is free! <a href="#">Create an account</a>
+                    Registration is free! <NavLink to="/register">Create an account</NavLink>
                 </p>
 
             </div>
