@@ -1,8 +1,13 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./css/navigation.css";
+import { AuthContext } from "../contexts/AuthContext";
+import { useContext } from 'react';
 
 export default function Navigation() {
+    const { logout, user, loading } = useContext(AuthContext);
+
+
     return (
         <div className="navbar">
             <div className="navbar-inner">
@@ -24,7 +29,7 @@ export default function Navigation() {
 
                 <div className="nav-right-side">
                     <span className="nav-pill">25 CREDITS</span>
-                    <span className="nav-user">Welcome, John Doe</span>
+                    <span className="nav-user">Welcome {user.name ? user.name : "Guest"}</span>
                     <button className="nav-btn">LOGOUT</button>
                 </div>
             </div>

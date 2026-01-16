@@ -34,6 +34,27 @@ export function AuthProvider({ children }) {
             .catch(function (error) {
                 // handle error
                 console.log(error);
+                hibakezeles(error)
+            })
+            .finally(function () {
+                // always executed
+                setLoading(false);
+            });
+    }
+    
+    function register(adat) {
+        console.log(adat);
+        setLoading(true);
+        myAxios
+            .post("/users/register", adat)
+            .then(function (response) {
+                /* Átnavigálunk a login oldalra */
+                window.location.href = "/login";
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+                hibakezeles(error)
             })
             .finally(function () {
                 // always executed
@@ -106,5 +127,5 @@ export function AuthProvider({ children }) {
         }
     }
 
-    return <AuthContext.Provider value={{}}>{children}</AuthContext.Provider>;
+    return <AuthContext.Provider value={{ user, token, loading, serverError, login, register, logout, hibakezeles }}>{children}</AuthContext.Provider>;
 }

@@ -2,19 +2,25 @@ import React, { useState } from "react";
 import "./css/login.css";
 import "./css/registration.css";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
+import { useContext } from 'react';
 
 export default function RegistrationPage() {
 
     const [email, setEmail] = useState("");
-    const [fullname, setFullname] = useState("");
+    const [name, setName] = useState("");
     const [cpassword, setCPassword] = useState("");
     const [password, setPassword] = useState("");
 
      const [errors, setErrors] = useState({});
 
+    const { register } = useContext(AuthContext);     
+
     function submit(event) {
         event.preventDefault();
-        console.log("LOGIN:", { email, password });
+        console.log("REGISTER:", { email, password });
+
+        register({name, email, password, cpassword});        
     }
 
 
@@ -25,10 +31,10 @@ export default function RegistrationPage() {
                 <form onSubmit={submit}>
                     <label>Full Name</label>
                     <input
-                        type="fullname"
-                        value={fullname}
+                        type="name"
+                        value={name}
                         placeholder="Enter your full name"
-                        onChange={(e) => setFullname(e.target.value)}
+                        onChange={(e) => setName(e.target.value)}
                     />
 
 

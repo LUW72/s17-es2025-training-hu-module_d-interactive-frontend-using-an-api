@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./css/login.css";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
+import { useContext } from 'react';
 
 export default function LoginPage() {
+    const { login, loading, serverError } = useContext(AuthContext);
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -11,6 +14,10 @@ export default function LoginPage() {
     function submit(event) {
         event.preventDefault();
         console.log("LOGIN:", { email, password });
+
+        //if (!validateForm()) return;
+
+        login({email, password});
     }
 
     function validateForm() {
