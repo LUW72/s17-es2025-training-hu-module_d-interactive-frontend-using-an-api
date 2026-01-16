@@ -10,6 +10,8 @@ export default function RegistrationPage() {
     const [cpassword, setCPassword] = useState("");
     const [password, setPassword] = useState("");
 
+     const [errors, setErrors] = useState({});
+
     function submit(event) {
         event.preventDefault();
         console.log("LOGIN:", { email, password });
