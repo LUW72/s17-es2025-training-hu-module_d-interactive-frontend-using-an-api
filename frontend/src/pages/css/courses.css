@@ -1,0 +1,245 @@
+.keret {
+    border: 2px solid #2b2b2b;
+    background: #fff;
+}
+
+.nagy {
+    letter-spacing: 1px;
+}
+
+.kozep {
+    text-align: center;
+}
+
+
+.p-3.keret {
+    max-width: 1100px;
+    margin: 26px auto 14px;
+    padding: 22px;
+}
+
+.p-3.keret h1 {
+    margin: 0 0 8px 0;
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.p-3.keret p {
+    margin: 0 0 14px 0;
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+
+.szuro {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 12px;
+    align-items: center;
+}
+
+.szuro input,
+.szuro select {
+    width: 100%;
+    padding: 12px 12px;
+    border: 2px solid #2b2b2b;
+    background: #ffffff;
+    font-size: 12px;
+}
+
+.courses {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 0 0 10px;
+}
+
+
+.course.keret {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.course .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 2px dashed #2b2b2b;
+    padding-bottom: 10px;
+}
+
+.course .header h2 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.beiratkozva {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+.course>p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.8;
+    line-height: 1.4;
+
+    min-height: 52px;
+    /* hogy a kártyák egyenletesebbek legyenek */
+}
+
+.course-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.course-details .keret {
+    border-width: 2px;
+    padding: 10px 8px;
+    font-size: 11px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.course-details .keret br {
+    display: block;
+    margin: 2px 0;
+}
+
+.course button.nagy {
+    margin-top: 4px;
+    width: 100%;
+    padding: 12px 12px;
+    border: 2px solid black;
+    background: #fff;
+
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+
+/* ====== COURSE DETAILS  ====== */
+
+.courseone {
+    width: 1000px;
+    margin: 20px auto;
+
+}
+
+
+.keret {
+    border: 2px solid black;
+    background: white;
+}
+
+.padding {
+    padding: 10px;
+}
+
+
+.courseone>.keret {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+
+.courseone>.keret>button {
+    padding: 8px 12px;
+    border: 2px solid black;
+    background: white;
+    cursor: pointer;
+}
+
+
+.courseone h1 {
+    margin: 15px 0 8px 0;
+    font-size: 26px;
+}
+
+.courseone p {
+    font-size: 12px;
+}
+
+.progress {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.chapter-progress, .credit-progress {
+    width: 50%;
+    padding: 10px;
+}
+
+.progress-container {
+    border: 2px solid #222;
+    height: 14px;
+    margin: 8px 0;
+    background: #fff;
+}
+
+.progressbar {
+    height: 100%;
+    width: 20%;
+    background: #222;
+}
+
+
+.courseone>.keret:not(:first-child) {
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.courseone h2 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    border-bottom: 1px dashed #222;
+    padding-bottom: 6px;
+}
+
+.szelesseg {
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.courseone button {
+    padding: 8px 10px;
+    margin-right: 8px;
+    margin-top: 10px;
+    border: 2px solid #222;
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+.inactive {
+    color: grey;
+    cursor: not-allowed;
+}
+
+.linkedin {
+    width: 100%;
+    margin-top: 12px;
+    background: #fff;
+}
+
+#linkedin-share-root {
+    width: 1000px;
+    margin: 15px auto;
+    padding: 10px;
+    border: 2px solid #222;
+    background: white;
+}

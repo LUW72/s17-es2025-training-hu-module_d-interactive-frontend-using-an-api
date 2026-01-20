@@ -8,6 +8,10 @@ import authMiddleware from './middleware/authMiddleWare';
 import Layout from './pages/Layout';
 import DashboardPage from './pages/DashboardPage';
 import CoursesPage from './pages/CoursesPage';
+import MentorsPage from './pages/MentorsPage';
+import NoPage from './pages/NoPage';
+import { CoursesProvider } from './contexts/CourseContext';
+import CourseDetailPage from './pages/CourseDetailPage';
 
 
 export default function App() {
@@ -34,24 +38,36 @@ export default function App() {
           element: <DashboardPage />,
         },
         {
-          path: "/courses",
-          element: <CoursesPage />,
+          path: "courses",
+          children: [
+            {
+              index: true,
+              element: <CoursesPage />,
+            },
+            {
+              path: ":id",
+              element: <CourseDetailPage />,
+            },
+          ],
         },
-/*         {
+        {
           path: "/mentors",
           element: <MentorsPage />,
-        }, */
+        },
       ],
     },
-/*     {
+    {
       path: "*",
       element: <NoPage />,
-    }, */
+    },
   ]);
 
   return (
     <AuthProvider>
-      <RouterProvider router={router} />
+      <CoursesProvider>
+
+        <RouterProvider router={router} />
+      </CoursesProvider>
     </AuthProvider>
   );
 }
