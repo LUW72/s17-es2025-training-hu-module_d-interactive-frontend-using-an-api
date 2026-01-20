@@ -1,0 +1,118 @@
+.bracket {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #2b2b2b;
+  background: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  color: #000000;
+}
+
+.headerText {
+  margin-bottom: 18px;
+}
+
+.welcomeText {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.balanceText {
+  margin-top: 6px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.infoBoxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.enrolledCoursesBracket, .completedChaptersBracket, .totalCreditsBracket {
+  border: 2px solid #2b2b2b;
+  padding: 14px;
+  position: relative;
+}
+
+.upperText {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.courseNum {
+  margin-top: 14px;
+  font-size: 34px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.lowerText {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+.diagrams {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.creditProgressBracket,
+.courseComplBracket {
+  border: 2px solid #2b2b2b;
+  padding: 12px;
+  position: relative;
+}
+
+.bracketUpperRight {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.diagrNameCredit {
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  padding-right: 60px; /* hogy ne fusson rá a [CHART]-ra */
+}
+
+.chartBox {
+  border: 2px dashed black;
+  padding: 10px;
+
+  height: 280px; /* fontos, különben a chart összeeshet */
+}
+
+.lowerBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.leftBracket, .rightBracket 
+{
+  border: 2px solid #000000;
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+

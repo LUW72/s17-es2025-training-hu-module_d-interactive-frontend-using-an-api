@@ -11,9 +11,9 @@ export const AuthContext = createContext();
 export function AuthProvider({ children }) {
 
     const [token, setToken] = useState(localStorage.getItem("token"));
-    const [user, setUser] = useState([]);
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [serverError, setServerError] = useState({});
+    const [serverError, setServerError] = useState(null);
 
 
     function login(adat) {
@@ -41,7 +41,7 @@ export function AuthProvider({ children }) {
                 setLoading(false);
             });
     }
-    
+
     function register(adat) {
         console.log(adat);
         setLoading(true);
@@ -83,7 +83,7 @@ export function AuthProvider({ children }) {
         myAxios
             .get("/users/me", { headers: getAuthHeaders() })
             .then((response) => {
-                setUser(response.data.user); //  beállítjuk a user-t
+                setUser(response.data); //  beállítjuk a user-t
             })
             .catch((error) => {
                 console.log(error);
@@ -127,5 +127,5 @@ export function AuthProvider({ children }) {
         }
     }
 
-    return <AuthContext.Provider value={{ user, token, loading, serverError, login, register, logout, hibakezeles }}>{children}</AuthContext.Provider>;
+    return <AuthContext.Provider value={{ user, token, loading, serverError, login, register, logout, hibakezeles, loadUser }}>{children}</AuthContext.Provider>;
 }
