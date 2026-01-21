@@ -12,6 +12,7 @@ import MentorsPage from './pages/MentorsPage';
 import NoPage from './pages/NoPage';
 import { CoursesProvider } from './contexts/CourseContext';
 import CourseDetailPage from './pages/CourseDetailPage';
+import { MentorProvider } from './contexts/MentorContext';
 
 
 export default function App() {
@@ -64,10 +65,13 @@ export default function App() {
 
   return (
     <AuthProvider>
-      <CoursesProvider>
 
-        <RouterProvider router={router} />
-      </CoursesProvider>
+      <MentorProvider>
+        <CoursesProvider>
+
+          <RouterProvider router={router} />
+        </CoursesProvider>
+      </MentorProvider>
     </AuthProvider>
   );
 }

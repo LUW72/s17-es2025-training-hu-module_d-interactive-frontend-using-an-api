@@ -1,0 +1,104 @@
+.mentor-bracket {
+    width: 1100px;
+    margin: auto;
+    margin-top: 20px;
+    color: black;
+}
+
+.upper-bracket {
+    border: 2px solid black;
+    background: white;
+    padding: 18px;
+    margin-bottom: 15px;
+}
+
+.upper-bracket h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+.upper-bracket p {
+    margin: 0 0 12px 0;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.inner-bracket {
+    border: 2px solid black;
+    background: #b0d9ff;
+    padding: 12px;
+    font-size: 12px;
+}
+
+.av-sessions {
+    border: 2px solid black;
+    background: white;
+    padding: 18px;
+}
+
+.av-sessions h2 {
+    margin: 0 0 14px 0;
+    font-size: 20px;
+}
+
+.lower-big-bracket {
+    border: 2px solid #222;
+    margin-bottom: 15px;
+    background: white;
+}
+
+.session-bracket {
+    padding: 14px;
+}
+
+
+.name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #222;
+    padding-bottom: 8px;
+}
+
+
+.boxes-infos {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.date,
+.time,
+.duration,
+.cost {
+    border: 2px solid black;
+    padding: 10px;
+    width: 25%;
+    font-size: 11px;
+    text-align: center;
+}
+
+.duration p,
+.cost p {
+    margin: 0;
+}
+
+.lower-boxes {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+
+
+.available-button {
+    background: beige;
+}
+
+.inactive {
+    background: #ddd !important;
+    cursor: not-allowed !important;
+    opacity: 0.7;
+}
