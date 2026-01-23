@@ -59,8 +59,19 @@ export function CoursesProvider({ children }) {
         setFilteredList(szurtLista);
     }
 
-    function completeChapter() {
-
+    function completeChapter(courseId, chapterId) {
+        setLoading(true)
+        return myAxios.post(
+            `/courses/${courseId}/chapters/${chapterId}/complete`, { completed: true },
+            {
+                headers: getAuthHeaders(),
+            }
+        )
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((error) => { console.log(error) })
+            .finally(() => { setLoading(false) });
     }
 
     function enrollCourse(courseId) {

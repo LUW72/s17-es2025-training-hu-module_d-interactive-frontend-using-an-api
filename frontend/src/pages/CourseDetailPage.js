@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CoursesContext } from '../contexts/CourseContext';
 import { AuthContext } from '../contexts/AuthContext';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -11,14 +11,63 @@ export default function CourseDetailsPage() {
   const navigate = useNavigate();
   const course = state?.course;
 
+  const [sumOfCompletedCredits, setSumOfCompletedCredits] = useState(0);
+  const [countOfCompletedChapters, setCountOfCompletedChapters] = useState(0);
+  const [countOfChapters, setCountOfChapters] = useState(0);
+  const [sumOfCredits, setSumOfCredits] = useState(0);
+
   useEffect(() => {
     getCourseById(course.id);
   }, [course]);
 
+  useEffect(() => {
+    if (selectedCourse?.course) {
+      calculatingProgress();
+    }
+  }, [selectedCourse]);
+
   if (loading || !selectedCourse || selectedCourse.length == 0) {
     return <div>Az oldal betöltés alatt</div>;
   }
-  function markAsCompleted(){}
+
+  function markAsCompleted(chapterId, isCompleted) {
+    console.log("mark", chapterId);
+    if (!isCompleted) {
+      completeChapter(selectedCourse.course.id, chapterId)
+        .then(() => {
+          /* frissíteni kell a usert! */
+          loadUser();
+          getCourseById(selectedCourse.course.id);
+          //calculatingProgress();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }
+
+  /* progress bar */
+
+  function calculatingProgress() {
+    const totalChapters = selectedCourse.course.chapters.length;
+    let completedChapters = 0;
+    let totalCredits = 0;
+    let completedCredits = 0;
+
+    selectedCourse.course.chapters.forEach((ch) => {
+      totalCredits += ch.credits;
+      if (ch.isCompleted) {
+        completedChapters += 1;
+        completedCredits += ch.credits;
+      }
+    });
+
+    setCountOfChapters(totalChapters);
+    setCountOfCompletedChapters(completedChapters);
+    setSumOfCredits(totalCredits);
+    setSumOfCompletedCredits(completedCredits);
+  }
+
   return (
     <div className=" padding courseone">
       <div className="keret">
@@ -34,23 +83,39 @@ export default function CourseDetailsPage() {
           <div className="chapter-progress keret">
             <h3>Chapter progress</h3>
             <div className="progress-container">
-              <div className="progressbar"></div>
+              <div
+                className="progressbar"
+                style={{
+                  width: `${(countOfCompletedChapters / countOfChapters) * 100
+                    }%`,
+                }}
+              ></div>
             </div>
             <p>
-              {3} of {12} chapters completed (40 %)
+              {countOfCompletedChapters} of {countOfChapters} chapters completed
+              ({((countOfCompletedChapters / countOfChapters) * 100).toFixed(2)}{" "}
+              %)
             </p>
           </div>
           <div className="credit-progress keret">
+            {" "}
             <h3>Credit progress</h3>
             <div className="progress-container">
-              <div className="progressbar"></div>
+              <div
+                className="progressbar"
+                style={{
+                  width: `${(sumOfCompletedCredits / sumOfCredits) * 100}%`,
+                }}
+              ></div>
             </div>
             <p>
-              {23} of {35} credits earned (62 %)
+              {sumOfCompletedCredits} of {sumOfCredits} credits earned (
+              {((sumOfCompletedCredits / sumOfCredits) * 100).toFixed(2)} %)
             </p>
           </div>
         </div>
       </div>
+
       {selectedCourse.course.chapters.map((ch, i) => {
         return (
           <div className="keret" key={i}>
