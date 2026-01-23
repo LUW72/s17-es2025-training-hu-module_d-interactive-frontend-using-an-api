@@ -14,27 +14,21 @@ export default function BookedSessionPage() {
 
     useEffect(() => {
         loadUser();
-        console.log(user);
-        /* console.log(user.sessions); */
     }, []);
 
-    if (user === null || loading || user.sessions.length === 0) {
-        // Betöltés alatt ezt jeleníti meg
-        return (
-            <>
-                <div>Betöltés folyamatban, vagy nincs felvett mentor...</div>
-            </>
-        );
-    } 
+    if (!user) {
+        return <div>Loading sessions...</div>;
+    }
     return (
-        <div>
+        <div className="upper-bracket">
+        
             <button className="keret padding" onClick={() => navigate(-1)}>
                 Back to Mentors
             </button>
-            <div className="lower-big-bracket">
-{/*                 {user.sessions.map((s, i) => {
+            <div className="">
+                {user.sessions.map((s, i) => {
                     return <BookedSession session={s} key={i} mentor={{}} />;
-                })} */}
+                })}
             </div>
         </div>
     );

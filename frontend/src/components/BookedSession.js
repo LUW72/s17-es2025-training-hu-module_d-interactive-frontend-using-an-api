@@ -1,12 +1,20 @@
 import React from 'react'
 import "../pages/css/mentors.css";
 
-export default function BookedSession(session) {
+export default function BookedSession({ session }) {
+
+    console.log(session);
+
+
     return (
         <div className="sessions keret padding">
             <h3>{session.session.mentorName}</h3>
             <div className="button">
-                <button className={session.status === "rejected" ? "rejected-button" : session.status === "pending" ? "pending-button" : session.status === "cancelled" ? "canceled-button" : "confirmed-button"} >
+                <button className={
+                      session.status === "rejected" ? "rejected-button" 
+                    : session.status === "pending" ? "pending-button" 
+                    : session.status === "cancelled" ? "canceled-button" 
+                    : "confirmed-button"} >
                     {session.status}
                 </button>
             </div>
@@ -34,7 +42,7 @@ export default function BookedSession(session) {
                 </div>
                 <div className='cost'>
                     COST<br /><br /><strong>
-                        <p>{session.session.creditCost} credists</p></strong>
+                        <p>{session.creditsPaid} credists</p></strong>
                 </div>
             </div>
         </div>
