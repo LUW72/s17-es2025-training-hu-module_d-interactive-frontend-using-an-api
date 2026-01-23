@@ -13,6 +13,7 @@ import NoPage from './pages/NoPage';
 import { CoursesProvider } from './contexts/CourseContext';
 import CourseDetailPage from './pages/CourseDetailPage';
 import { MentorProvider } from './contexts/MentorContext';
+import BookedSessionPage from './pages/BookedSessionPage';
 
 
 export default function App() {
@@ -54,6 +55,10 @@ export default function App() {
         {
           path: "/mentors",
           element: <MentorsPage />,
+        },
+        {
+          path: "/bookedsession",
+          element: <BookedSessionPage />,
         },
       ],
     },

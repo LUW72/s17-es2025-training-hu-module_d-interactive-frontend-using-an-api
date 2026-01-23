@@ -60,12 +60,14 @@ export default function Mentor({ mentor }) {
                 </div>
                 <div className='lower-boxes'>
                     <div className="button">
-                        <button>
+                        <button className='profile'>
                             View Profile
                         </button>
                     </div>
                     <div className="button">
-                        <button className={`keret session ${mentor.isAvailable ? "available-button" : "inactive"}  `} onClick={sessionBooked} disabled={!mentor.isAvailable} >
+                        <button className={`keret session ${mentor.isAvailable ? "available-button" : "inactive"}  `}
+                            onClick={sessionBooked} 
+                            disabled={!mentor.isAvailable} >
                             {mentor.isAvailable ? "Available" : "Not available"}
                         </button>
                     </div>
